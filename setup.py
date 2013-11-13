@@ -1,4 +1,5 @@
 import sys, os, os.path, re, shutil, string
+from setup_test import TestCommand
 from distutils.core import setup, Command
 from distutils.command.build import build
 from distutils.command.install import install
@@ -50,7 +51,7 @@ def define_the_build(self, dist, system_name, patch_x = ''):
   dist.py_modules = system['py_modules']
   dist.packages = system['python']
   #dist.data_files = [('%sbin' % patch_x, binsrc)]
-  #dist.data_files = [ ("%sdata" % (patch_x, ), "scripts/%s" % (x,)) 
+  #dist.data_files = [ ("%sdata" % (patch_x, ), "scripts/%s" % (x,))
   #				for x in ['CMSRunAnalysis.sh']]
   #dist.data_files = ['scripts/CMSRunAnalysis.sh']
   if os.path.exists(docroot):
